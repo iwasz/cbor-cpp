@@ -22,6 +22,7 @@
 namespace cbor {
     class listener {
     public:
+
         virtual void on_integer(int value) = 0;
 
         virtual void on_bytes(unsigned char *data, int size) = 0;
