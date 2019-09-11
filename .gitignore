@@ -2,3 +2,5 @@
 *.xcodeproj/
 *.dSYM
 test
+CMakeLists.txt.user
+build-cbor-cpp-*

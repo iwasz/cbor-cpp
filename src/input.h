@@ -7,39 +7,42 @@
 
        http://www.apache.org/licenses/LICENSE-2.0
 
-	   Unless required by applicable law or agreed to in writing, software
-	   distributed under the License is distributed on an "AS IS" BASIS,
-	   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	   See the License for the specific language governing permissions and
-	   limitations under the License.
+           Unless required by applicable law or agreed to in writing, software
+           distributed under the License is distributed on an "AS IS" BASIS,
+           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+           See the License for the specific language governing permissions and
+           limitations under the License.
 */
 
 #ifndef CBOR_CPP_INPUT_H
 #define CBOR_CPP_INPUT_H
 
 namespace cbor {
-    class input {
-    private:
-        unsigned char *_data;
+
+class input {
+private:
+        unsigned char const *_data;
         int _size;
         int _offset;
-    public:
-        input(void *data, int size);
 
-        ~input();
+public:
+        input (void const *data, int size);
 
-        bool has_bytes(int count);
+        ~input ();
 
-        unsigned char get_byte();
+        bool has_bytes (int count);
 
-        unsigned short get_short();
+        unsigned char get_byte ();
 
-        unsigned int get_int();
+        unsigned short get_short ();
 
-        unsigned long long get_long();
+        unsigned int get_int ();
 
-        void get_bytes(void *to, int count);
-    };
-}
+        unsigned long long get_long ();
+
+        void get_bytes (void *to, int count);
+};
+
+} // namespace cbor
 
 #endif // CBOR_CPP_INPUT_H
